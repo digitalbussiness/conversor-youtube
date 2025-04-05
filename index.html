@@ -2,38 +2,32 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Converta vídeos do YouTube para MP3 ou MP4 gratuitamente. Funciona no celular e computador. Rápido, seguro e online.">
-  <meta name="keywords" content="conversor YouTube, baixar vídeo YouTube, converter YouTube para MP3, MP4 grátis, YouTube Downloader">
-  <meta name="author" content="Conversor YouTube">
-  <title>Conversor YouTube - Baixar Vídeos em MP3 e MP4</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Converta vídeos do YouTube para MP3 e MP4 online gratuitamente. Compatível com PC e celular.">
+  <title>Conversor YouTube - MP3 e MP4</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+      text-align: center;
       background-color: #f4f4f4;
-      color: #333;
     }
     header {
       background-color: #e50914;
       color: white;
       padding: 20px 10px;
-      text-align: center;
     }
     main {
       padding: 40px 20px;
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
     }
     h1 {
       font-size: 2em;
       margin-bottom: 20px;
     }
     p {
-      font-size: 1.1em;
-      line-height: 1.6em;
+      font-size: 1.2em;
+      margin-bottom: 30px;
     }
     .btn-converter {
       background-color: #e50914;
@@ -45,21 +39,27 @@
       cursor: pointer;
       transition: background-color 0.3s;
       text-decoration: none;
-      display: inline-block;
-      margin: 20px 0;
     }
     .btn-converter:hover {
       background-color: #b00610;
     }
-    section {
-      margin-top: 40px;
-      text-align: left;
-    }
     footer {
-      text-align: center;
-      padding: 20px;
+      margin-top: 40px;
       font-size: 0.9em;
       color: #888;
+    }
+    .sticky-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      padding: 10px;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+      z-index: 999;
+    }
+    .native-banner {
+      margin: 30px 0;
     }
     @media (max-width: 768px) {
       h1 {
@@ -69,45 +69,56 @@
         font-size: 1em;
         padding: 12px 25px;
       }
-      main {
-        padding: 20px 10px;
-      }
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Conversor YouTube</h1>
-    <p>Converta vídeos do YouTube para MP3 e MP4 gratuitamente</p>
   </header>
 
   <main>
     <h1>Baixe vídeos do YouTube em MP3 ou MP4</h1>
-    <p>Ferramenta online rápida, segura e grátis. Funciona no celular e computador, sem necessidade de instalar nada!</p>
-    <a href="https://www.y2mate.tools/pt2/" class="btn-converter" target="_blank">Converter Agora</a>
+    <p>Conversor online rápido e grátis. Funciona no celular e no computador.</p>
 
-    <section>
-      <h2>Por que usar nosso conversor?</h2>
-      <ul>
-        <li>✔️ Conversão rápida e ilimitada</li>
-        <li>✔️ Compatível com MP3 e MP4</li>
-        <li>✔️ Suporte a dispositivos móveis e desktop</li>
-        <li>✔️ 100% gratuito e fácil de usar</li>
-      </ul>
-    </section>
+    <!-- Native banner -->
+    <div class="native-banner">
+      <script async src="https://www.monetag.com/tag.js" data-zone="9177372"></script>
+    </div>
 
-    <section>
-      <h2>Como converter vídeos do YouTube?</h2>
-      <ol>
-        <li>1️⃣ Copie o link do vídeo no YouTube</li>
-        <li>2️⃣ Clique em “Converter Agora”</li>
-        <li>3️⃣ Escolha o formato MP3 ou MP4 e baixe!</li>
-      </ol>
-    </section>
+    <a href="#" class="btn-converter" onclick="handleClick()">Converter Agora</a>
+    <div id="resultado"></div>
   </main>
 
   <footer>
     © 2025 Conversor YouTube. Todos os direitos reservados.
   </footer>
+
+  <!-- Sticky Banner -->
+  <div class="sticky-banner">
+    <script async src="https://www.monetag.com/tag.js" data-zone="9177374"></script>
+  </div>
+
+  <!-- In-Page Push -->
+  <script async src="https://www.monetag.com/tag.js" data-zone="9177375"></script>
+
+  <!-- Interstitial ao clicar -->
+  <script>
+    function handleClick() {
+      if (!sessionStorage.getItem("monetag_interstitial")) {
+        sessionStorage.setItem("monetag_interstitial", "sim");
+        let script = document.createElement("script");
+        script.src = "https://www.monetag.com/tag.js";
+        script.setAttribute("data-zone", "9177373");
+        document.body.appendChild(script);
+
+        setTimeout(() => {
+          window.location.href = "https://www.y2mate.tools/pt2/";
+        }, 2000);
+      } else {
+        window.location.href = "https://www.y2mate.tools/pt2/";
+      }
+    }
+  </script>
 </body>
 </html>
