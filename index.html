@@ -87,8 +87,7 @@
     <h2>Baixe vídeos do YouTube em MP3 ou MP4</h2>
     <p>Conversor online grátis. Compatível com celular e computador.</p>
 
-    <a href="#" class="btn-converter" onclick="handleClick()">Converter Agora</a>
-    <div id="resultado"></div>
+    <a href="https://www.y2mate.tools/pt2/" class="btn-converter">Converter Agora</a>
 
     <div class="native-banner">
       <script async src="https://www.monetag.com/tag.js" data-zone="9177372"></script>
@@ -105,25 +104,6 @@
 
   <!-- Push notification -->
   <script async src="https://www.monetag.com/tag.js" data-zone="9177375"></script>
-
-  <!-- Redirecionamento e anúncio intersticial -->
-  <script>
-    function handleClick() {
-      if (!sessionStorage.getItem("monetag_interstitial")) {
-        sessionStorage.setItem("monetag_interstitial", "sim");
-        let script = document.createElement("script");
-        script.src = "https://www.monetag.com/tag.js";
-        script.setAttribute("data-zone", "9177373");
-        document.body.appendChild(script);
-
-        setTimeout(() => {
-          window.location.href = "https://www.y2mate.tools/pt2/";
-        }, 2000);
-      } else {
-        window.location.href = "https://www.y2mate.tools/pt2/";
-      }
-    }
-  </script>
 
   <!-- Popunder ao clicar -->
   <script>
