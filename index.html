@@ -4,70 +4,71 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Converta vídeos do YouTube para MP3 e MP4 online gratuitamente. Compatível com PC e celular.">
+  <link rel="icon" type="image/png" href="favicon.png"/>
   <title>Conversor YouTube - MP3 e MP4</title>
-  <link rel="icon" type="image/png" href="/favicon.png">
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
+      background: linear-gradient(135deg, #111827, #1f2937);
+      color: #fff;
       text-align: center;
-      background: linear-gradient(to bottom right, #1f1c2c, #928dab);
-      color: #ffffff;
     }
     header {
-      background-color: #2a2a72;
-      color: white;
+      background-color: #111827;
       padding: 20px 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
     }
     main {
       padding: 40px 20px;
     }
-    h1 {
-      font-size: 2em;
-      margin-bottom: 20px;
+    h2 {
+      font-size: 1.6em;
+      margin-bottom: 15px;
+      color: #e5e7eb;
     }
     p {
-      font-size: 1.2em;
-      margin-bottom: 30px;
+      font-size: 1.1em;
+      color: #d1d5db;
     }
     .btn-converter {
-      background-color: #4e54c8;
+      background: linear-gradient(to right, #6366f1, #8b5cf6);
       color: white;
       padding: 15px 30px;
-      border: none;
-      border-radius: 8px;
       font-size: 1.2em;
+      border: none;
+      border-radius: 10px;
       cursor: pointer;
-      transition: background-color 0.3s;
+      margin-top: 30px;
+      transition: 0.3s;
       text-decoration: none;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      display: inline-block;
     }
     .btn-converter:hover {
-      background-color: #6c63ff;
+      opacity: 0.9;
     }
     footer {
-      margin-top: 40px;
+      margin-top: 50px;
       font-size: 0.9em;
-      color: #ccc;
+      color: #9ca3af;
+      padding: 20px;
+    }
+    .native-banner, .sticky-banner {
+      margin: 20px auto;
     }
     .sticky-banner {
       position: fixed;
       bottom: 0;
-      left: 0;
       width: 100%;
-      background-color: rgba(255, 255, 255, 0.9);
-      padding: 10px;
-      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
       z-index: 999;
     }
-    .native-banner {
-      margin: 30px 0;
-    }
     @media (max-width: 768px) {
-      h1 {
-        font-size: 1.6em;
+      h2 {
+        font-size: 1.4em;
       }
       .btn-converter {
         font-size: 1em;
@@ -77,36 +78,35 @@
   </style>
 </head>
 <body>
+
   <header>
     <h1>Conversor YouTube</h1>
   </header>
 
   <main>
-    <h1>Baixe vídeos do YouTube em MP3 ou MP4</h1>
-    <p>Conversor online rápido e grátis. Funciona no celular e no computador.</p>
-
-    <!-- Native banner -->
-    <div class="native-banner">
-      <script async src="https://www.monetag.com/tag.js" data-zone="9177372"></script>
-    </div>
+    <h2>Baixe vídeos do YouTube em MP3 ou MP4</h2>
+    <p>Conversor online grátis. Compatível com celular e computador.</p>
 
     <a href="#" class="btn-converter" onclick="handleClick()">Converter Agora</a>
     <div id="resultado"></div>
+
+    <div class="native-banner">
+      <script async src="https://www.monetag.com/tag.js" data-zone="9177372"></script>
+    </div>
   </main>
 
   <footer>
     © 2025 Conversor YouTube. Todos os direitos reservados.
   </footer>
 
-  <!-- Sticky Banner -->
   <div class="sticky-banner">
     <script async src="https://www.monetag.com/tag.js" data-zone="9177374"></script>
   </div>
 
-  <!-- In-Page Push -->
+  <!-- Push notification -->
   <script async src="https://www.monetag.com/tag.js" data-zone="9177375"></script>
 
-  <!-- Interstitial ao clicar -->
+  <!-- Redirecionamento e anúncio intersticial -->
   <script>
     function handleClick() {
       if (!sessionStorage.getItem("monetag_interstitial")) {
@@ -124,5 +124,21 @@
       }
     }
   </script>
+
+  <!-- Popunder ao clicar -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.body.addEventListener("click", function () {
+        if (!sessionStorage.getItem("monetag_pop")) {
+          sessionStorage.setItem("monetag_pop", "sim");
+          let script = document.createElement("script");
+          script.src = "https://www.monetag.com/tag.js";
+          script.setAttribute("data-zone", "9177371");
+          document.body.appendChild(script);
+        }
+      }, { once: true });
+    });
+  </script>
+
 </body>
 </html>
