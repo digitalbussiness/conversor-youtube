@@ -3,34 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Converta vídeos do YouTube para MP3 e MP4 online gratuitamente. Compatível com PC e celular.">
-  <title>Conversor YouTube - MP3 e MP4</title>
+  <meta name="description" content="Converta vídeos para MP3 e MP4 online gratuitamente. Compatível com PC e celular.">
+  <title>Conversor MP3/MP4 Online</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+      font-family: Arial, sans-serif;
       text-align: center;
-      background-color: #f4f4f4;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #fff;
     }
     header {
-      background-color: #e50914;
-      color: white;
+      background-color: rgba(0, 0, 0, 0.3);
       padding: 20px 10px;
-    }
-    main {
-      padding: 40px 20px;
     }
     h1 {
       font-size: 2em;
-      margin-bottom: 20px;
+      margin: 10px 0;
+    }
+    main {
+      padding: 40px 20px;
     }
     p {
       font-size: 1.2em;
       margin-bottom: 30px;
     }
     .btn-converter {
-      background-color: #e50914;
+      background-color: #00c9a7;
       color: white;
       padding: 15px 30px;
       border: none;
@@ -41,25 +41,28 @@
       text-decoration: none;
     }
     .btn-converter:hover {
-      background-color: #b00610;
+      background-color: #009f87;
     }
     footer {
       margin-top: 40px;
       font-size: 0.9em;
-      color: #888;
+      color: #ccc;
+      background-color: rgba(0, 0, 0, 0.2);
+      padding: 15px 10px;
+    }
+    .native-banner {
+      margin: 30px 0;
     }
     .sticky-banner {
       position: fixed;
       bottom: 0;
       left: 0;
       width: 100%;
-      background-color: #fff;
+      background-color: #ffffff;
       padding: 10px;
       box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
       z-index: 999;
-    }
-    .native-banner {
-      margin: 30px 0;
+      text-align: center;
     }
     @media (max-width: 768px) {
       h1 {
@@ -74,35 +77,35 @@
 </head>
 <body>
   <header>
-    <h1>Conversor YouTube</h1>
+    <h1>Conversor MP3 / MP4</h1>
   </header>
 
   <main>
-    <h1>Baixe vídeos do YouTube em MP3 ou MP4</h1>
-    <p>Conversor online rápido e grátis. Funciona no celular e no computador.</p>
+    <p>Converta vídeos online com rapidez. Compatível com celular e computador.</p>
 
-    <!-- Native banner -->
+    <!-- Native Banner Ad -->
     <div class="native-banner">
       <script async src="https://www.monetag.com/tag.js" data-zone="9177372"></script>
     </div>
 
+    <!-- Botão de Conversão -->
     <a href="#" class="btn-converter" onclick="handleClick()">Converter Agora</a>
     <div id="resultado"></div>
   </main>
 
   <footer>
-    © 2025 Conversor YouTube. Todos os direitos reservados.
+    © 2025 Conversor MP3 / MP4. Todos os direitos reservados.
   </footer>
 
-  <!-- Sticky Banner -->
+  <!-- Sticky Banner Ad -->
   <div class="sticky-banner">
     <script async src="https://www.monetag.com/tag.js" data-zone="9177374"></script>
   </div>
 
-  <!-- In-Page Push -->
+  <!-- In-Page Push Ad -->
   <script async src="https://www.monetag.com/tag.js" data-zone="9177375"></script>
 
-  <!-- Interstitial ao clicar -->
+  <!-- Interstitial Ad on Click -->
   <script>
     function handleClick() {
       if (!sessionStorage.getItem("monetag_interstitial")) {
@@ -111,7 +114,6 @@
         script.src = "https://www.monetag.com/tag.js";
         script.setAttribute("data-zone", "9177373");
         document.body.appendChild(script);
-
         setTimeout(() => {
           window.location.href = "https://www.y2mate.tools/pt2/";
         }, 2000);
