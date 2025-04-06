@@ -3,93 +3,77 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Converta vídeos do YouTube para MP3 e MP4 online gratuitamente. Compatível com PC e celular.">
+  <meta name="description" content="Converta vídeos do YouTube para MP3 e MP4 online gratuitamente. Compatível com iOS, Android e PC.">
   <title>Conversor YouTube - MP3 e MP4</title>
-  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="icon" type="image/png" href="favicon.png" />
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      color: #f1f1f1;
       text-align: center;
-      background: linear-gradient(to bottom right, #0f0f0f, #1c1c1c);
-      color: #fff;
     }
-
     header {
-      background-color: #111;
-      padding: 20px 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      background-color: #0f3460;
+      padding: 20px;
     }
-
     header h1 {
-      color: #f2c94c;
-      font-size: 2em;
       margin: 0;
+      font-size: 2.2em;
     }
-
     main {
       padding: 40px 20px;
     }
-
     h2 {
-      font-size: 1.6em;
-      margin-bottom: 15px;
-      color: #f2c94c;
+      font-size: 1.8em;
+      margin-bottom: 10px;
     }
-
     p {
       font-size: 1.1em;
-      margin-bottom: 25px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
+      color: #ccc;
+      margin-bottom: 30px;
     }
-
     .btn-converter {
-      background: linear-gradient(to right, #f2c94c, #f2994a);
-      color: #111;
+      background-color: #e94560;
+      color: white;
       padding: 15px 30px;
       border: none;
-      border-radius: 10px;
+      border-radius: 8px;
       font-size: 1.2em;
       cursor: pointer;
-      transition: 0.3s;
-      font-weight: bold;
       text-decoration: none;
-      display: inline-block;
+      transition: background 0.3s;
     }
-
     .btn-converter:hover {
-      background: linear-gradient(to right, #f2994a, #f2c94c);
-      transform: scale(1.05);
+      background-color: #ff2e63;
     }
-
-    .native-banner {
-      margin: 30px 0;
-    }
-
     footer {
-      margin-top: 60px;
+      margin-top: 50px;
       font-size: 0.9em;
-      color: #aaa;
-      background-color: #0a0a0a;
+      color: #999;
       padding: 20px;
     }
-
+    footer a {
+      color: #ffd700;
+      text-decoration: none;
+      margin-left: 5px;
+    }
+    .ad-section {
+      margin: 40px auto;
+    }
     .sticky-banner {
       position: fixed;
       bottom: 0;
       left: 0;
       width: 100%;
-      background-color: #1b1b1b;
-      padding: 10px;
-      box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+      background-color: #111;
+      padding: 10px 0;
       z-index: 999;
     }
-
     @media (max-width: 768px) {
-      header h1 {
+      h2 {
         font-size: 1.5em;
       }
       .btn-converter {
@@ -100,82 +84,59 @@
   </style>
 </head>
 <body>
+
   <header>
     <h1>Conversor YouTube</h1>
   </header>
 
   <main>
     <h2>Baixe vídeos do YouTube em MP3 ou MP4</h2>
-    <p>Conversor online gratuito e rápido. Compatível com celular e computador. Clique no botão abaixo para converter.</p>
+    <p>Conversor online rápido e gratuito. Compatível com iOS, Android e PC.</p>
 
-    <!-- Banner Monetag -->
-    <div class="native-banner">
+    <!-- Anúncio Monetag - Push -->
+    <div class="ad-section">
       <script async src="https://www.monetag.com/tag.js" data-zone="9177372"></script>
     </div>
 
-    <a href="#" class="btn-converter" onclick="handleRedirect()">Converter Agora</a>
-  </main>
+    <a href="#" class="btn-converter" onclick="handleClick()">Converter Agora</a>
 
-  <footer>
-    © 2025 Conversor YouTube. Todos os direitos reservados.
-  </footer>
+    <!-- Anúncio Monetag - Banner Nativo -->
+    <div class="ad-section">
+      <script async src="https://www.monetag.com/tag.js" data-zone="9177373"></script>
+    </div>
+  </main>
 
   <!-- Sticky Banner -->
   <div class="sticky-banner">
     <script async src="https://www.monetag.com/tag.js" data-zone="9177374"></script>
   </div>
 
-  <!-- Notificações Push -->
+  <!-- In-Page Push -->
   <script async src="https://www.monetag.com/tag.js" data-zone="9177375"></script>
 
-  <!-- Redirecionamento Inteligente com Intersticial e Popunder -->
+  <!-- Popunder ao clicar -->
   <script>
-    const links = [
-      "https://www.yt5s.lol/pt7",
-      "https://www.y2mate.tools/pt2/",
-      "https://ytmp3.nu/pt",
-      "https://www.snapinsta.app/pt/youtube-video-downloader"
-    ];
-
-    function handleRedirect() {
+    function handleClick() {
       if (!sessionStorage.getItem("monetag_interstitial")) {
         sessionStorage.setItem("monetag_interstitial", "sim");
-
         let script = document.createElement("script");
         script.src = "https://www.monetag.com/tag.js";
-        script.setAttribute("data-zone", "9177373");
+        script.setAttribute("data-zone", "9177371");
         document.body.appendChild(script);
-
         setTimeout(() => {
-          checkAndRedirect();
+          window.location.href = "https://www.yt5s.ltd/youtube-to-mp3/";
         }, 2000);
       } else {
-        checkAndRedirect();
+        window.location.href = "https://www.yt5s.ltd/youtube-to-mp3/";
       }
-    }
-
-    function checkAndRedirect() {
-      let index = 0;
-
-      function tryNextLink() {
-        if (index >= links.length) {
-          alert("No momento, nenhum link de conversão está disponível. Tente novamente mais tarde.");
-          return;
-        }
-
-        const testLink = links[index];
-        fetch(testLink, { method: 'HEAD', mode: 'no-cors' })
-          .then(() => {
-            window.location.href = testLink;
-          })
-          .catch(() => {
-            index++;
-            tryNextLink();
-          });
-      }
-
-      tryNextLink();
     }
   </script>
+
+  <footer>
+    © 2025 Conversor YouTube. Todos os direitos reservados.
+    <br>
+    <a href="https://www.tiktok.com/@digitalbussinessx?is_from_webapp=1&sender_device=pc" target="_blank">Nosso TikTok 🔗</a>
+  </footer>
+
 </body>
 </html>
