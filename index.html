@@ -4,71 +4,93 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Converta vídeos do YouTube para MP3 e MP4 online gratuitamente. Compatível com PC e celular.">
-  <link rel="icon" type="image/png" href="favicon.png"/>
   <title>Conversor YouTube - MP3 e MP4</title>
+  <link rel="icon" href="favicon.png" type="image/png">
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #111827, #1f2937);
-      color: #fff;
       text-align: center;
+      background: linear-gradient(to bottom right, #0f0f0f, #1c1c1c);
+      color: #fff;
     }
+
     header {
-      background-color: #111827;
+      background-color: #111;
       padding: 20px 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
     }
+
     header h1 {
-      margin: 0;
+      color: #f2c94c;
       font-size: 2em;
+      margin: 0;
     }
+
     main {
       padding: 40px 20px;
     }
+
     h2 {
       font-size: 1.6em;
       margin-bottom: 15px;
-      color: #e5e7eb;
+      color: #f2c94c;
     }
+
     p {
       font-size: 1.1em;
-      color: #d1d5db;
+      margin-bottom: 25px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
+
     .btn-converter {
-      background: linear-gradient(to right, #6366f1, #8b5cf6);
-      color: white;
+      background: linear-gradient(to right, #f2c94c, #f2994a);
+      color: #111;
       padding: 15px 30px;
-      font-size: 1.2em;
       border: none;
       border-radius: 10px;
+      font-size: 1.2em;
       cursor: pointer;
-      margin-top: 30px;
       transition: 0.3s;
+      font-weight: bold;
       text-decoration: none;
       display: inline-block;
     }
+
     .btn-converter:hover {
-      opacity: 0.9;
+      background: linear-gradient(to right, #f2994a, #f2c94c);
+      transform: scale(1.05);
     }
+
+    .native-banner {
+      margin: 30px 0;
+    }
+
     footer {
-      margin-top: 50px;
+      margin-top: 60px;
       font-size: 0.9em;
-      color: #9ca3af;
+      color: #aaa;
+      background-color: #0a0a0a;
       padding: 20px;
     }
-    .native-banner, .sticky-banner {
-      margin: 20px auto;
-    }
+
     .sticky-banner {
       position: fixed;
       bottom: 0;
+      left: 0;
       width: 100%;
+      background-color: #1b1b1b;
+      padding: 10px;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
       z-index: 999;
     }
+
     @media (max-width: 768px) {
-      h2 {
-        font-size: 1.4em;
+      header h1 {
+        font-size: 1.5em;
       }
       .btn-converter {
         font-size: 1em;
@@ -78,47 +100,82 @@
   </style>
 </head>
 <body>
-
   <header>
     <h1>Conversor YouTube</h1>
   </header>
 
   <main>
     <h2>Baixe vídeos do YouTube em MP3 ou MP4</h2>
-    <p>Conversor online grátis. Compatível com celular e computador.</p>
+    <p>Conversor online gratuito e rápido. Compatível com celular e computador. Clique no botão abaixo para converter.</p>
 
-    <a href="https://www.y2mate.tools/pt2/" class="btn-converter">Converter Agora</a>
-
+    <!-- Banner Monetag -->
     <div class="native-banner">
       <script async src="https://www.monetag.com/tag.js" data-zone="9177372"></script>
     </div>
+
+    <a href="#" class="btn-converter" onclick="handleRedirect()">Converter Agora</a>
   </main>
 
   <footer>
     © 2025 Conversor YouTube. Todos os direitos reservados.
   </footer>
 
+  <!-- Sticky Banner -->
   <div class="sticky-banner">
     <script async src="https://www.monetag.com/tag.js" data-zone="9177374"></script>
   </div>
 
-  <!-- Push notification -->
+  <!-- Notificações Push -->
   <script async src="https://www.monetag.com/tag.js" data-zone="9177375"></script>
 
-  <!-- Popunder ao clicar -->
+  <!-- Redirecionamento Inteligente com Intersticial e Popunder -->
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      document.body.addEventListener("click", function () {
-        if (!sessionStorage.getItem("monetag_pop")) {
-          sessionStorage.setItem("monetag_pop", "sim");
-          let script = document.createElement("script");
-          script.src = "https://www.monetag.com/tag.js";
-          script.setAttribute("data-zone", "9177371");
-          document.body.appendChild(script);
-        }
-      }, { once: true });
-    });
-  </script>
+    const links = [
+      "https://www.yt5s.lol/pt7",
+      "https://www.y2mate.tools/pt2/",
+      "https://ytmp3.nu/pt",
+      "https://www.snapinsta.app/pt/youtube-video-downloader"
+    ];
 
+    function handleRedirect() {
+      if (!sessionStorage.getItem("monetag_interstitial")) {
+        sessionStorage.setItem("monetag_interstitial", "sim");
+
+        let script = document.createElement("script");
+        script.src = "https://www.monetag.com/tag.js";
+        script.setAttribute("data-zone", "9177373");
+        document.body.appendChild(script);
+
+        setTimeout(() => {
+          checkAndRedirect();
+        }, 2000);
+      } else {
+        checkAndRedirect();
+      }
+    }
+
+    function checkAndRedirect() {
+      let index = 0;
+
+      function tryNextLink() {
+        if (index >= links.length) {
+          alert("No momento, nenhum link de conversão está disponível. Tente novamente mais tarde.");
+          return;
+        }
+
+        const testLink = links[index];
+        fetch(testLink, { method: 'HEAD', mode: 'no-cors' })
+          .then(() => {
+            window.location.href = testLink;
+          })
+          .catch(() => {
+            index++;
+            tryNextLink();
+          });
+      }
+
+      tryNextLink();
+    }
+  </script>
 </body>
 </html>
