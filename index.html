@@ -150,15 +150,17 @@
   <!-- Redirecionamento com Interstitial -->
   <script>
     function handleClick() {
-      if (!sessionStorage.getItem("monetag_interstitial")) {
-        sessionStorage.setItem("monetag_interstitial", "sim");
-        let script = document.createElement("script");
+      if (!sessionStorage.getItem("monetag_interstitial_shown")) {
+        sessionStorage.setItem("monetag_interstitial_shown", "1");
+        const script = document.createElement("script");
         script.src = "https://www.monetag.com/tag.js";
         script.setAttribute("data-zone", "9177373");
         document.body.appendChild(script);
+
+        // Redireciona após exibir o anúncio
         setTimeout(() => {
           window.location.href = "https://www.y2mate.ltd/pt/";
-        }, 2000);
+        }, 2500);
       } else {
         window.location.href = "https://www.y2mate.ltd/pt/";
       }
