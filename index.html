@@ -81,6 +81,26 @@
       color: #ccc;
       font-size: 0.9em;
     }
+
+    /* Botão flutuante Monetag */
+    .floating-btn {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 0.95em;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      transition: background-color 0.3s ease;
+    }
+    .floating-btn:hover {
+      background-color: #3e8e41;
+    }
+
     @media(max-width: 768px) {
       .btn-converter {
         width: 80%;
@@ -138,6 +158,9 @@
   <footer>
     © 2025 Conversor YouTube. Todos os direitos reservados.
   </footer>
+
+  <!-- Botão flutuante Monetag -->
+  <a href="https://monetag.com/?ref_id=zg2e" target="_blank" class="floating-btn">💰 Ganhe com seu site</a>
 
   <!-- Anúncio Sticky -->
   <div class="sticky-banner">
