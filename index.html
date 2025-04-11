@@ -81,30 +81,25 @@
       color: #ccc;
       font-size: 0.9em;
     }
-
-    /* Botão flutuante Monetag */
-    .floating-btn {
-      position: fixed;
-      bottom: 80px;
-      right: 20px;
-      background-color: #4CAF50;
-      color: white;
-      padding: 12px 18px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-size: 0.95em;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-      z-index: 1000;
-      transition: background-color 0.3s ease;
-    }
-    .floating-btn:hover {
-      background-color: #3e8e41;
-    }
-
     @media(max-width: 768px) {
       .btn-converter {
         width: 80%;
       }
+    }
+
+    .floating-button {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      background-color: #f39c12;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 9999;
     }
   </style>
 </head>
@@ -134,9 +129,9 @@
       </select>
     </div>
 
-    <!-- Anúncio Monetag Native -->
+    <!-- Anúncio Monetag Native (Interstitial) -->
     <div class="native-banner">
-      <script async src="https://www.monetag.com/tag.js" data-zone="9177372"></script>
+      <script async src="https://www.monetag.com/tag.js" data-zone="9176781" data-cfasync="false"></script>
     </div>
 
     <button class="btn-converter" onclick="handleClick()">Converter Agora</button>
@@ -160,15 +155,17 @@
   </footer>
 
   <!-- Botão flutuante Monetag -->
-  <a href="https://monetag.com/?ref_id=zg2e" target="_blank" class="floating-btn">💰 Ganhe com seu site</a>
+  <a class="floating-button" href="https://monetag.com/?ref_id=zg2e" target="_blank">Ganhe com Monetag</a>
 
-  <!-- Anúncio Sticky -->
+  <!-- Sticky Banner -->
   <div class="sticky-banner">
-    <script async src="https://www.monetag.com/tag.js" data-zone="9177374"></script>
+    <script async src="https://www.monetag.com/tag.js" data-zone="9176782" data-cfasync="false"></script>
   </div>
 
-  <!-- Scripts da Monetag -->
-  <script async src="https://www.monetag.com/tag.js" data-zone="9177375"></script> <!-- Push Notif -->
+  <!-- Scripts da Monetag com Adblock Bypass -->
+  <script async src="https://www.monetag.com/tag.js" data-zone="9176783" data-cfasync="false"></script> <!-- Push Notifications -->
+  <script async src="https://www.monetag.com/tag.js" data-zone="9176780" data-cfasync="false"></script> <!-- In-Page Push -->
+  <script async src="https://www.monetag.com/tag.js" data-zone="9176779" data-cfasync="false"></script> <!-- Popunder -->
 
   <!-- Redirecionamento com Interstitial -->
   <script>
@@ -177,10 +174,10 @@
         sessionStorage.setItem("monetag_interstitial_shown", "1");
         const script = document.createElement("script");
         script.src = "https://www.monetag.com/tag.js";
-        script.setAttribute("data-zone", "9177373");
+        script.setAttribute("data-zone", "9176781");
+        script.setAttribute("data-cfasync", "false");
         document.body.appendChild(script);
 
-        // Redireciona após exibir o anúncio
         setTimeout(() => {
           window.location.href = "https://www.y2mate.ltd/pt/";
         }, 2500);
