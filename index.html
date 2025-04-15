@@ -1,198 +1,140 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Converta vídeos do YouTube em MP3 e MP4 com qualidade. Compatível com Android, iOS e PC. Rápido e gratuito!">
-  <title>Conversor YouTube - MP3 e MP4</title>
-  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <title>DiaZen - Ferramentas para o seu dia</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom, #141e30, #243b55);
-      color: white;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: #121212;
+      color: #fff;
+      padding: 20px;
+    }
+
+    h1 {
       text-align: center;
+      margin-bottom: 10px;
+      font-size: 2rem;
     }
-    header {
-      padding: 20px;
-      background: #1b1f27;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2em;
-    }
-    main {
-      padding: 30px 20px;
-    }
-    .btn-converter {
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      padding: 15px 30px;
-      font-size: 1.2em;
-      border-radius: 10px;
-      cursor: pointer;
-      margin-top: 20px;
-      transition: 0.3s;
-    }
-    .btn-converter:hover {
-      background-color: #45a049;
-    }
-    .info {
-      max-width: 800px;
-      margin: auto;
-      font-size: 1.1em;
-      line-height: 1.6;
-      padding: 20px 0;
-    }
-    .sticky-banner {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background-color: #fff;
-      z-index: 999;
-    }
-    .native-banner {
-      margin: 30px 0;
-    }
-    .quality-options {
-      margin: 20px auto;
-    }
-    select {
-      padding: 10px;
-      font-size: 1em;
-      border-radius: 8px;
-      border: none;
-    }
-    .social {
-      margin-top: 30px;
-    }
-    .social a {
-      color: white;
-      text-decoration: none;
-      font-size: 1.2em;
-    }
-    footer {
-      padding: 20px;
-      background-color: #1b1f27;
+
+    p.description {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 1rem;
       color: #ccc;
-      font-size: 0.9em;
     }
-    .floating-button {
-      position: fixed;
-      bottom: 90px;
-      right: 20px;
-      background-color: #ff0077;
-      color: white;
-      padding: 12px 20px;
-      border-radius: 20px;
-      text-decoration: none;
-      font-weight: bold;
-      z-index: 1000;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
     }
-    @media(max-width: 768px) {
-      .btn-converter {
-        width: 80%;
-      }
+
+    .card {
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.2s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card:nth-child(1) { background-color: #5c6bc0; }
+    .card:nth-child(2) { background-color: #26c6da; }
+    .card:nth-child(3) { background-color: #ffca28; }
+    .card:nth-child(4) { background-color: #66bb6a; }
+    .card:nth-child(5) { background-color: #ab47bc; }
+    .card:nth-child(6) { background-color: #ec407a; }
+    .card:nth-child(7) { background-color: #ffa726; }
+    .card:nth-child(8) { background-color: #29b6f6; }
+    .card:nth-child(9) { background-color: #ef5350; }
+
+    .card h2 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: #f0f0f0;
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <h1>Conversor YouTube</h1>
-  </header>
-
-  <main>
-    <div class="info">
-      <p>Converta vídeos do YouTube em MP3 ou MP4 com apenas um clique. Escolha a qualidade desejada e baixe gratuitamente. Compatível com Android, iOS e PC.</p>
+  <h1>DiaZen</h1>
+  <p class="description">Ferramentas úteis para tornar seu dia mais produtivo e organizado</p>
+  <div class="grid">
+    <div class="card" onclick="location.href='cronometro.html'">
+      <h2>Cronômetro</h2>
+      <p>Meça o tempo com precisão.</p>
     </div>
-
-    <div class="quality-options">
-      <label for="video-quality">Qualidade do Vídeo:</label>
-      <select id="video-quality">
-        <option>Alta (1080p)</option>
-        <option>Média (720p)</option>
-        <option>Baixa (480p)</option>
-      </select>
-      <br><br>
-      <label for="audio-quality">Qualidade do Áudio:</label>
-      <select id="audio-quality">
-        <option>Alta (320kbps)</option>
-        <option>Média (192kbps)</option>
-        <option>Baixa (128kbps)</option>
-      </select>
+    <div class="card" onclick="location.href='timer.html'">
+      <h2>Timer</h2>
+      <p>Contagem regressiva personalizada.</p>
     </div>
-
-    <div class="native-banner">
-      <div class="monetag" data-zone="9177372"></div>
+    <div class="card" onclick="location.href='relogio.html'">
+      <h2>Relógio Local</h2>
+      <p>Hora exata do seu local.</p>
     </div>
-
-    <button class="btn-converter" onclick="handleClick()">Converter Agora</button>
-
-    <div class="info">
-      <h3>Como funciona:</h3>
-      <ol>
-        <li>Clique no botão "Converter Agora".</li>
-        <li>Escolha o formato e a qualidade.</li>
-        <li>Baixe seu vídeo ou música em segundos.</li>
-      </ol>
+    <div class="card" onclick="location.href='mundial.html'">
+      <h2>Relógio Mundial</h2>
+      <p>Veja a hora em qualquer parte do mundo.</p>
     </div>
-
-    <div class="social">
-      <a href="https://www.tiktok.com/@digitalbussinessx?is_from_webapp=1&sender_device=pc" target="_blank">Siga-nos no TikTok</a>
+    <div class="card" onclick="location.href='fuso.html'">
+      <h2>Conversor de Fuso</h2>
+      <p>Converta horários entre países.</p>
     </div>
-  </main>
-
-  <footer>
-    © 2025 Conversor YouTube. Todos os direitos reservados.
-  </footer>
-
-  <!-- Botão Flutuante com Link -->
-  <a class="floating-button" href="https://monetag.com/?ref_id=zg2e" target="_blank">Monetize com a Monetag</a>
-
-  <!-- Sticky Banner -->
-  <div class="sticky-banner">
-    <div class="monetag" data-zone="9177374"></div>
+    <div class="card" onclick="location.href='alarme.html'">
+      <h2>Alarme</h2>
+      <p>Defina alarmes pelo navegador.</p>
+    </div>
+    <div class="card" onclick="location.href='calendario.html'">
+      <h2>Calendário</h2>
+      <p>Planeje seus dias com facilidade.</p>
+    </div>
+    <div class="card" onclick="location.href='datas.html'">
+      <h2>Calculadora de Datas</h2>
+      <p>Calcule períodos e prazos.</p>
+    </div>
+    <div class="card" onclick="location.href='dicas.html'">
+      <h2>Dicas de Produtividade</h2>
+      <p>Melhore sua rotina com sugestões úteis.</p>
+    </div>
   </div>
 
-  <!-- Scripts Monetag com Adblock Bypass -->
-  <script type="text/javascript">
-    (function(w,d,s,o,f,js,fjs){
-      w['monetagObject']=o;w[o]=w[o]||function(){
-      (w[o].q=w[o].q||[]).push(arguments)};
-      js=d.createElement(s),fjs=d.getElementsByTagName(s)[0];
-      js.async=1;js.src=f;js.id="monetag-sdk";
-      fjs.parentNode.insertBefore(js,fjs);
-    })(window,document,'script','_mt','https://www.monetag.com/sdk/sdk.js');
-    
-    _mt('load', {
-      zones: [
-        9177375, 9177374, 9177373, 9177372, 9177371,
-        9176783, 9176782, 9176781, 9176780, 9176779
-      ]
-    });
-  </script>
-
-  <!-- Redirecionamento com Interstitial -->
+  <!-- Scripts da Monetag com Adblock Bypass -->
   <script>
-    function handleClick() {
-      if (!sessionStorage.getItem("monetag_interstitial_shown")) {
-        sessionStorage.setItem("monetag_interstitial_shown", "1");
-        const interstitial = document.createElement("div");
-        interstitial.className = "monetag";
-        interstitial.setAttribute("data-zone", "9177373");
-        document.body.appendChild(interstitial);
-        setTimeout(() => {
-          window.location.href = "https://www.y2mate.ltd/pt/";
-        }, 2500);
-      } else {
-        window.location.href = "https://www.y2mate.ltd/pt/";
-      }
-    }
+    (function() {
+      var z = document.createElement("script");
+      z.src = "https://www.googletagmanager.com/gtag/js?id=MONETAG-BYPASS";
+      document.body.appendChild(z);
+    })();
+  </script>
+  <script type="text/javascript">
+    atOptions = {
+      'key': '9177371',
+      'format': 'iframe',
+      'height': 250,
+      'width': 300,
+      'params': {}
+    };
+    document.write('<script type="text/javascript" src="//www.topcreativeformat.com/9177371/invoke.js"><\/script>');
   </script>
 </body>
+
 </html>
