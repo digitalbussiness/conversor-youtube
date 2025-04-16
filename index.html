@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DiaZen - Ferramentas para o seu dia</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversor de YouTube</title>
   <link rel="icon" href="favicon.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
@@ -74,67 +73,53 @@
     }
   </style>
 </head>
-
 <body>
-  <h1>DiaZen</h1>
-  <p class="description">Ferramentas úteis para tornar seu dia mais produtivo e organizado</p>
+  <h1>Conversor YouTube</h1>
+  <p class="description">Converta seus vídeos do YouTube em diferentes formatos de forma rápida e fácil.</p>
   <div class="grid">
-    <div class="card" onclick="location.href='cronometro.html'">
-      <h2>Cronômetro</h2>
-      <p>Meça o tempo com precisão.</p>
+    <div class="card" onclick="openTool('ferramenta1')">
+      <h2>Ferramenta 1</h2>
+      <p>Descrição da ferramenta 1.</p>
     </div>
-    <div class="card" onclick="location.href='timer.html'">
-      <h2>Timer</h2>
-      <p>Contagem regressiva personalizada.</p>
+    <div class="card" onclick="openTool('ferramenta2')">
+      <h2>Ferramenta 2</h2>
+      <p>Descrição da ferramenta 2.</p>
     </div>
-    <div class="card" onclick="location.href='relogio.html'">
-      <h2>Relógio Local</h2>
-      <p>Hora exata do seu local.</p>
+    <div class="card" onclick="openTool('ferramenta3')">
+      <h2>Ferramenta 3</h2>
+      <p>Descrição da ferramenta 3.</p>
     </div>
-    <div class="card" onclick="location.href='mundial.html'">
-      <h2>Relógio Mundial</h2>
-      <p>Veja a hora em qualquer parte do mundo.</p>
+    <div class="card" onclick="openTool('ferramenta4')">
+      <h2>Ferramenta 4</h2>
+      <p>Descrição da ferramenta 4.</p>
     </div>
-    <div class="card" onclick="location.href='fuso.html'">
-      <h2>Conversor de Fuso</h2>
-      <p>Converta horários entre países.</p>
+    <div class="card" onclick="openTool('ferramenta5')">
+      <h2>Ferramenta 5</h2>
+      <p>Descrição da ferramenta 5.</p>
     </div>
-    <div class="card" onclick="location.href='alarme.html'">
-      <h2>Alarme</h2>
-      <p>Defina alarmes pelo navegador.</p>
+    <div class="card" onclick="openTool('ferramenta6')">
+      <h2>Ferramenta 6</h2>
+      <p>Descrição da ferramenta 6.</p>
     </div>
-    <div class="card" onclick="location.href='calendario.html'">
-      <h2>Calendário</h2>
-      <p>Planeje seus dias com facilidade.</p>
+    <div class="card" onclick="openTool('ferramenta7')">
+      <h2>Ferramenta 7</h2>
+      <p>Descrição da ferramenta 7.</p>
     </div>
-    <div class="card" onclick="location.href='datas.html'">
-      <h2>Calculadora de Datas</h2>
-      <p>Calcule períodos e prazos.</p>
+    <div class="card" onclick="openTool('ferramenta8')">
+      <h2>Ferramenta 8</h2>
+      <p>Descrição da ferramenta 8.</p>
     </div>
-    <div class="card" onclick="location.href='dicas.html'">
-      <h2>Dicas de Produtividade</h2>
-      <p>Melhore sua rotina com sugestões úteis.</p>
+    <div class="card" onclick="openTool('ferramenta9')">
+      <h2>Ferramenta 9</h2>
+      <p>Descrição da ferramenta 9.</p>
     </div>
   </div>
 
-  <!-- Scripts da Monetag com Adblock Bypass -->
   <script>
-    (function() {
-      var z = document.createElement("script");
-      z.src = "https://www.googletagmanager.com/gtag/js?id=MONETAG-BYPASS";
-      document.body.appendChild(z);
-    })();
-  </script>
-  <script type="text/javascript">
-    atOptions = {
-      'key': '9177371',
-      'format': 'iframe',
-      'height': 250,
-      'width': 300,
-      'params': {}
-    };
-    document.write('<script type="text/javascript" src="//www.topcreativeformat.com/9177371/invoke.js"><\/script>');
+    function openTool(tool) {
+      alert('Abrindo: ' + tool);
+      // Aqui você pode colocar window.location.href para cada ferramenta real quando quiser.
+    }
   </script>
 </body>
-
 </html>
