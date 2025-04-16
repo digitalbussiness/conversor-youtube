@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Conversor de YouTube</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conversor YouTube - Baixe Vídeos e Áudios de Forma Simples</title>
   <link rel="icon" href="favicon.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
@@ -52,15 +53,41 @@
       transform: scale(1.03);
     }
 
-    .card:nth-child(1) { background-color: #5c6bc0; }
-    .card:nth-child(2) { background-color: #26c6da; }
-    .card:nth-child(3) { background-color: #ffca28; }
-    .card:nth-child(4) { background-color: #66bb6a; }
-    .card:nth-child(5) { background-color: #ab47bc; }
-    .card:nth-child(6) { background-color: #ec407a; }
-    .card:nth-child(7) { background-color: #ffa726; }
-    .card:nth-child(8) { background-color: #29b6f6; }
-    .card:nth-child(9) { background-color: #ef5350; }
+    .card:nth-child(1) {
+      background-color: #5c6bc0;
+    }
+
+    .card:nth-child(2) {
+      background-color: #26c6da;
+    }
+
+    .card:nth-child(3) {
+      background-color: #ffca28;
+    }
+
+    .card:nth-child(4) {
+      background-color: #66bb6a;
+    }
+
+    .card:nth-child(5) {
+      background-color: #ab47bc;
+    }
+
+    .card:nth-child(6) {
+      background-color: #ec407a;
+    }
+
+    .card:nth-child(7) {
+      background-color: #ffa726;
+    }
+
+    .card:nth-child(8) {
+      background-color: #29b6f6;
+    }
+
+    .card:nth-child(9) {
+      background-color: #ef5350;
+    }
 
     .card h2 {
       font-size: 1.2rem;
@@ -71,55 +98,62 @@
       font-size: 0.9rem;
       color: #f0f0f0;
     }
+
+    .ads-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .ads-container iframe {
+      width: 320px;
+      height: 50px;
+      border: none;
+    }
   </style>
 </head>
+
 <body>
   <h1>Conversor YouTube</h1>
-  <p class="description">Converta seus vídeos do YouTube em diferentes formatos de forma rápida e fácil.</p>
+  <p class="description">Baixe vídeos e áudios do YouTube de forma simples e rápida.</p>
   <div class="grid">
-    <div class="card" onclick="openTool('ferramenta1')">
-      <h2>Ferramenta 1</h2>
-      <p>Descrição da ferramenta 1.</p>
+    <div class="card" onclick="openTool('converter')">
+      <h2>Converter Vídeo</h2>
+      <p>Baixe vídeos do YouTube em diversos formatos.</p>
     </div>
-    <div class="card" onclick="openTool('ferramenta2')">
-      <h2>Ferramenta 2</h2>
-      <p>Descrição da ferramenta 2.</p>
+    <div class="card" onclick="openTool('converter-audio')">
+      <h2>Converter Áudio</h2>
+      <p>Converta vídeos em áudios MP3 de alta qualidade.</p>
     </div>
-    <div class="card" onclick="openTool('ferramenta3')">
-      <h2>Ferramenta 3</h2>
-      <p>Descrição da ferramenta 3.</p>
+    <div class="card" onclick="openTool('tutorial')">
+      <h2>Como Usar</h2>
+      <p>Aprenda como usar a ferramenta passo a passo.</p>
     </div>
-    <div class="card" onclick="openTool('ferramenta4')">
-      <h2>Ferramenta 4</h2>
-      <p>Descrição da ferramenta 4.</p>
-    </div>
-    <div class="card" onclick="openTool('ferramenta5')">
-      <h2>Ferramenta 5</h2>
-      <p>Descrição da ferramenta 5.</p>
-    </div>
-    <div class="card" onclick="openTool('ferramenta6')">
-      <h2>Ferramenta 6</h2>
-      <p>Descrição da ferramenta 6.</p>
-    </div>
-    <div class="card" onclick="openTool('ferramenta7')">
-      <h2>Ferramenta 7</h2>
-      <p>Descrição da ferramenta 7.</p>
-    </div>
-    <div class="card" onclick="openTool('ferramenta8')">
-      <h2>Ferramenta 8</h2>
-      <p>Descrição da ferramenta 8.</p>
-    </div>
-    <div class="card" onclick="openTool('ferramenta9')">
-      <h2>Ferramenta 9</h2>
-      <p>Descrição da ferramenta 9.</p>
-    </div>
+  </div>
+
+  <div class="ads-container">
+    <!-- Exemplo de anúncios Monetag -->
+    <iframe src="https://your-ad-link.com"></iframe>
   </div>
 
   <script>
     function openTool(tool) {
-      alert('Abrindo: ' + tool);
-      // Aqui você pode colocar window.location.href para cada ferramenta real quando quiser.
+      if (tool === 'converter') {
+        window.location.href = "converter.html";
+      } else if (tool === 'converter-audio') {
+        window.location.href = "converter-audio.html";
+      } else if (tool === 'tutorial') {
+        window.location.href = "tutorial.html";
+      }
     }
   </script>
+
+  <!-- Scripts Monetag -->
+  <script async src="https://monetag.com/js/push.js" data-ads-id="9177371"></script>
+  <script async src="https://monetag.com/js/popunder.js" data-ads-id="9177372"></script>
+  <script async src="https://monetag.com/js/native-banner.js" data-ads-id="9177373"></script>
+  <script async src="https://monetag.com/js/vignette-banner.js" data-ads-id="9177374"></script>
+  <script async src="https://monetag.com/js/push-notifications.js" data-ads-id="9177375"></script>
 </body>
+
 </html>
