@@ -2,35 +2,47 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Conversor YouTube MP3/MP4</title>
-  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="icon" href="/favicon.ico" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
 
   <!-- Scripts Monetag -->
-  <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9177375" async></script> <!-- Wise tag Push Notifications -->
-  <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9177374" async></script> <!-- Wise tag Vignette Banner -->
-  <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9177373" async></script> <!-- Wise tag Native Banner (Interstitial) -->
-  <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9177372" async></script> <!-- Wise tag In-Page Push -->
-  <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9177371" async></script> <!-- Wise tag OnClick (Popunder) -->
+  <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9177371" async></script> <!-- OnClick -->
+  <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9177372" async></script> <!-- In-Page Push -->
+  <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9177373" async></script> <!-- Native Interstitial -->
+  <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9177374" async></script> <!-- Vignette Banner -->
+  <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9177375" async></script> <!-- Push Notification -->
+
+  <style>
+    body {
+      background: linear-gradient(to bottom, #0f0f0f, #1a1a1a);
+      color: white;
+    }
+    .ad-container {
+      margin: 2rem 0;
+      padding: 1rem;
+      text-align: center;
+    }
+    #qualitySection {
+      display: none;
+    }
+  </style>
 </head>
 <body class="flex flex-col items-center px-4 py-8">
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="text-center max-w-xl">
-    <h1 class="text-3xl md:text-5xl font-bold mb-4">Converta vídeos do YouTube em MP3 ou MP4</h1>
+    <h1 class="text-4xl font-bold mb-4">Converta vídeos do YouTube em MP3 ou MP4</h1>
     <p class="text-lg mb-6">Grátis, rápido e compatível com todos os dispositivos</p>
-    <input id="urlInput" type="text" placeholder="Cole o link do vídeo aqui..." class="w-full p-3 rounded-md text-black mb-4" />
-    <button onclick="redirecionar()" class="bg-blue-600 hover:bg-blue-700 transition px-6 py-3 rounded-xl text-white font-semibold text-lg shadow-lg">Comece Agora</button>
+    <input id="urlInput" type="text" placeholder="Cole o link do vídeo aqui..." oninput="mostrarQualidade()" class="w-full p-3 rounded-md text-black mb-4" />
+    <button onclick="redirecionar()" class="bg-blue-600 hover:bg-blue-700 transition px-6 py-3 rounded-xl text-white font-semibold text-lg shadow-lg">
+      Comece Agora
+    </button>
   </section>
 
-  <!-- Anúncio Intersticial -->
-  <div class="ad-container">
-    <div id="monetag-interstitial"></div>
-  </div>
-
-  <!-- Qualidade -->
-  <section class="mt-8 w-full max-w-3xl">
+  <!-- Qualidade (visível após colar o link) -->
+  <section id="qualitySection" class="mt-8 w-full max-w-3xl">
     <h2 class="text-2xl font-semibold mb-4 text-center">Escolha a Qualidade</h2>
     <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
       <div class="bg-zinc-800 p-4 rounded-xl text-center">MP3 128kbps</div>
@@ -42,24 +54,19 @@
     </div>
   </section>
 
-  <!-- Anúncio Banner -->
-  <div class="ad-container">
-    <div id="monetag-banner"></div>
-  </div>
+  <!-- Anúncios -->
+  <div class="ad-container" id="monetag-interstitial"></div>
+  <div class="ad-container" id="monetag-banner"></div>
+  <div class="ad-container" id="monetag-push"></div>
 
-  <!-- Segurança e Compatibilidade -->
+  <!-- Segurança -->
   <section class="mt-12 text-center max-w-xl">
     <h3 class="text-xl font-semibold mb-2">Totalmente seguro e compatível</h3>
     <p class="mb-1">✅ Sem vírus, sem limites</p>
     <p>📱 Compatível com Android, iPhone e todos os navegadores</p>
   </section>
 
-  <!-- Anúncio Push -->
-  <div class="ad-container">
-    <div id="monetag-push"></div>
-  </div>
-
-  <!-- Passo a Passo -->
+  <!-- Como funciona -->
   <section class="mt-12 w-full max-w-4xl text-center">
     <h3 class="text-2xl font-bold mb-6">Como Funciona</h3>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -87,22 +94,30 @@
     </div>
   </footer>
 
-  <!-- Redirecionamento -->
+  <!-- Scripts -->
   <script>
     function redirecionar() {
-      const url = document.getElementById('urlInput').value;
-      if (!url) return alert('Cole o link do vídeo antes de continuar.');
-      // Redirecionamento para diferentes sites
-      const redirectUrls = [
-        'https://www.y2mate.com/youtube/' + encodeURIComponent(url),
-        'https://www.onlinevideoconverter.com/pt/video-converter',
-        'https://www.convert2mp3.net/en/'
+      const url = document.getElementById('urlInput').value.trim();
+      if (!url) {
+        alert('Cole o link do vídeo antes de continuar.');
+        return;
+      }
+
+      const destinos = [
+        'https://www.y2mate.com/youtube/',
+        'https://www.youtubemp4.to/pt/',
+        'https://yt1s.ltd/en216'
       ];
-      // Escolher aleatoriamente o redirecionamento
-      const randomIndex = Math.floor(Math.random() * redirectUrls.length);
-      window.location.href = redirectUrls[randomIndex];
+
+      const destinoFinal = destinos[Math.floor(Math.random() * destinos.length)];
+      window.location.href = destinoFinal + encodeURIComponent(url);
+    }
+
+    function mostrarQualidade() {
+      const valor = document.getElementById('urlInput').value.trim();
+      const qualitySection = document.getElementById('qualitySection');
+      qualitySection.style.display = valor ? 'block' : 'none';
     }
   </script>
-
 </body>
 </html>
