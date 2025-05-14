@@ -7,17 +7,10 @@
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
-  <!-- Scripts Monetag com Adblock Bypass -->
-  <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9177371" async></script>
-  <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9177372" async></script>
-  <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9177373" async></script>
-  <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9177374" async></script>
-  <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9177375" async></script>
-  <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9176783" async></script>
-  <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9176782" async></script>
-  <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9176781" async></script>
-  <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9176780" async></script>
-  <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9176779" async></script>
+  <!-- Scripts Monetag no HEAD -->
+  <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9177371" async></script> <!-- AdBypass -->
+  <script type="text/javascript" src="https://go.pushnative.net/pu.js" data-idzone="9176780" async></script> <!-- Popunder -->
+  <script type="text/javascript" src="https://go.pushnative.net/pushntf.js" data-idzone="9176781" async></script> <!-- Push Notification -->
 
   <style>
     body {
@@ -39,12 +32,12 @@
     <p class="text-lg mb-6">Grátis, rápido e compatível com todos os dispositivos</p>
     <input id="urlInput" type="text" placeholder="Cole o link do vídeo aqui..." class="w-full p-3 rounded-md text-black mb-4" />
     <button onclick="redirecionar()" class="bg-blue-600 hover:bg-blue-700 transition px-6 py-3 rounded-xl text-white font-semibold text-lg shadow-lg">Comece Agora</button>
-  </section>
 
-  <!-- Anúncio Intersticial -->
-  <div class="ad-container">
-    <div id="monetag-interstitial"></div>
-  </div>
+    <!-- In-Page Push após botão -->
+    <div class="ad-container mt-6">
+      <script type="text/javascript" src="https://go.pushnative.net/inpush.js" data-idzone="9176782" async></script>
+    </div>
+  </section>
 
   <!-- Qualidade -->
   <section class="mt-8 w-full max-w-3xl">
@@ -57,12 +50,12 @@
       <div class="bg-zinc-800 p-4 rounded-xl text-center">MP4 720p</div>
       <div class="bg-zinc-800 p-4 rounded-xl text-center">MP4 1080p</div>
     </div>
-  </section>
 
-  <!-- Anúncio Banner -->
-  <div class="ad-container">
-    <div id="monetag-banner"></div>
-  </div>
+    <!-- AdBypass após seção de qualidade -->
+    <div class="ad-container">
+      <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9177372" async></script>
+    </div>
+  </section>
 
   <!-- Segurança e Compatibilidade -->
   <section class="mt-12 text-center max-w-xl">
@@ -70,11 +63,6 @@
     <p class="mb-1">✅ Sem vírus, sem limites</p>
     <p>📱 Compatível com Android, iPhone e todos os navegadores</p>
   </section>
-
-  <!-- Anúncio Push -->
-  <div class="ad-container">
-    <div id="monetag-push"></div>
-  </div>
 
   <!-- Passo a Passo -->
   <section class="mt-12 w-full max-w-4xl text-center">
@@ -93,7 +81,17 @@
         <p>Clique em Converter</p>
       </div>
     </div>
+
+    <!-- Intersticial entre os passos -->
+    <div class="ad-container">
+      <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9177373" async></script>
+    </div>
   </section>
+
+  <!-- Antes do rodapé -->
+  <div class="ad-container">
+    <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9177374" async></script>
+  </div>
 
   <!-- Rodapé -->
   <footer class="mt-16 w-full max-w-4xl text-center text-sm text-gray-400">
