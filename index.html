@@ -5,53 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Conversor YouTube MP3/MP4</title>
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
-  <!-- Scripts Monetag com Adblock Bypass -->
-  <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9177371" async></script>
-  <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9177372" async></script>
-  <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9177373" async></script>
-  <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9177374" async></script>
-  <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9177375" async></script>
-
-  <style>
-    body {
-      background: linear-gradient(to bottom, #0f0f0f, #1a1a1a);
-      color: white;
-    }
-    .hidden { display: none; }
-  </style>
+  <!-- Scripts Monetag -->
+  <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9177375" async></script> <!-- Wise tag Push Notifications -->
+  <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9177374" async></script> <!-- Wise tag Vignette Banner -->
+  <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9177373" async></script> <!-- Wise tag Native Banner (Interstitial) -->
+  <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9177372" async></script> <!-- Wise tag In-Page Push -->
+  <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9177371" async></script> <!-- Wise tag OnClick (Popunder) -->
 </head>
 <body class="flex flex-col items-center px-4 py-8">
 
-  <!-- Hero -->
+  <!-- Hero Section -->
   <section class="text-center max-w-xl">
-    <h1 class="text-4xl md:text-5xl font-bold mb-4">Converta vídeos do YouTube em MP3 ou MP4</h1>
+    <h1 class="text-3xl md:text-5xl font-bold mb-4">Converta vídeos do YouTube em MP3 ou MP4</h1>
     <p class="text-lg mb-6">Grátis, rápido e compatível com todos os dispositivos</p>
     <input id="urlInput" type="text" placeholder="Cole o link do vídeo aqui..." class="w-full p-3 rounded-md text-black mb-4" />
-    <button onclick="mostrarQualidade()" class="bg-blue-600 hover:bg-blue-700 transition px-6 py-3 rounded-xl text-white font-semibold text-lg shadow-lg">Próximo</button>
+    <button onclick="redirecionar()" class="bg-blue-600 hover:bg-blue-700 transition px-6 py-3 rounded-xl text-white font-semibold text-lg shadow-lg">Comece Agora</button>
   </section>
 
-  <!-- Qualidade (revelado após inserir link) -->
-  <section id="qualidade" class="hidden mt-8 w-full max-w-3xl text-center">
-    <h2 class="text-2xl font-semibold mb-4">Escolha a Qualidade</h2>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
-      <button onclick="redirecionar('mp3_128')" class="bg-zinc-800 hover:bg-zinc-700 p-4 rounded-xl">MP3 128kbps</button>
-      <button onclick="redirecionar('mp3_320')" class="bg-zinc-800 hover:bg-zinc-700 p-4 rounded-xl">MP3 320kbps</button>
-      <button onclick="redirecionar('mp4_360')" class="bg-zinc-800 hover:bg-zinc-700 p-4 rounded-xl">MP4 360p</button>
-      <button onclick="redirecionar('mp4_720')" class="bg-zinc-800 hover:bg-zinc-700 p-4 rounded-xl">MP4 720p</button>
-      <button onclick="redirecionar('mp4_1080')" class="bg-zinc-800 hover:bg-zinc-700 p-4 rounded-xl">MP4 1080p</button>
+  <!-- Anúncio Intersticial -->
+  <div class="ad-container">
+    <div id="monetag-interstitial"></div>
+  </div>
+
+  <!-- Qualidade -->
+  <section class="mt-8 w-full max-w-3xl">
+    <h2 class="text-2xl font-semibold mb-4 text-center">Escolha a Qualidade</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div class="bg-zinc-800 p-4 rounded-xl text-center">MP3 128kbps</div>
+      <div class="bg-zinc-800 p-4 rounded-xl text-center">MP3 192kbps</div>
+      <div class="bg-zinc-800 p-4 rounded-xl text-center">MP3 320kbps</div>
+      <div class="bg-zinc-800 p-4 rounded-xl text-center">MP4 360p</div>
+      <div class="bg-zinc-800 p-4 rounded-xl text-center">MP4 720p</div>
+      <div class="bg-zinc-800 p-4 rounded-xl text-center">MP4 1080p</div>
     </div>
   </section>
 
-  <!-- Anúncios Estratégicos -->
-  <div class="my-8 w-full max-w-3xl text-center">
-    <div id="ad-top" class="mb-4"></div>
-    <div id="ad-middle" class="mb-4"></div>
-    <div id="ad-bottom"></div>
+  <!-- Anúncio Banner -->
+  <div class="ad-container">
+    <div id="monetag-banner"></div>
   </div>
 
-  <!-- Instruções -->
+  <!-- Segurança e Compatibilidade -->
+  <section class="mt-12 text-center max-w-xl">
+    <h3 class="text-xl font-semibold mb-2">Totalmente seguro e compatível</h3>
+    <p class="mb-1">✅ Sem vírus, sem limites</p>
+    <p>📱 Compatível com Android, iPhone e todos os navegadores</p>
+  </section>
+
+  <!-- Anúncio Push -->
+  <div class="ad-container">
+    <div id="monetag-push"></div>
+  </div>
+
+  <!-- Passo a Passo -->
   <section class="mt-12 w-full max-w-4xl text-center">
     <h3 class="text-2xl font-bold mb-6">Como Funciona</h3>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -65,7 +73,7 @@
       </div>
       <div class="bg-zinc-800 p-6 rounded-xl">
         <p class="text-2xl mb-2">3️⃣</p>
-        <p>Pronto! Você será redirecionado</p>
+        <p>Clique em Converter</p>
       </div>
     </div>
   </section>
@@ -79,46 +87,22 @@
     </div>
   </footer>
 
-  <!-- Script -->
+  <!-- Redirecionamento -->
   <script>
-    function mostrarQualidade() {
-      const input = document.getElementById('urlInput').value.trim();
-      if (!input) {
-        alert('Cole o link do vídeo antes de continuar.');
-        return;
-      }
-      document.getElementById('qualidade').classList.remove('hidden');
-    }
-
-    function redirecionar(qualidade) {
-      const url = document.getElementById('urlInput').value.trim();
+    function redirecionar() {
+      const url = document.getElementById('urlInput').value;
       if (!url) return alert('Cole o link do vídeo antes de continuar.');
-
-      const encodedUrl = encodeURIComponent(url);
-
-      // Lista de redirecionamento com fallback
-      const destinos = [
-        `https://www.y2mate.com/youtube/${encodedUrl}`,
-        `https://snapsave.app/pt/youtube-video-downloader?url=${encodedUrl}`,
-        `https://savethevideo.com/pt/download?url=${encodedUrl}`
+      // Redirecionamento para diferentes sites
+      const redirectUrls = [
+        'https://www.y2mate.com/youtube/' + encodeURIComponent(url),
+        'https://www.onlinevideoconverter.com/pt/video-converter',
+        'https://www.convert2mp3.net/en/'
       ];
-
-      let index = 0;
-
-      function tentarAbrir() {
-        if (index >= destinos.length) {
-          alert('Todos os servidores estão temporariamente indisponíveis.');
-          return;
-        }
-        const win = window.open(destinos[index], '_blank');
-        if (!win || win.closed || typeof win.closed === 'undefined') {
-          index++;
-          setTimeout(tentarAbrir, 500); // tenta o próximo após meio segundo
-        }
-      }
-
-      tentarAbrir();
+      // Escolher aleatoriamente o redirecionamento
+      const randomIndex = Math.floor(Math.random() * redirectUrls.length);
+      window.location.href = redirectUrls[randomIndex];
     }
   </script>
+
 </body>
 </html>
