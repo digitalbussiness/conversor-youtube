@@ -7,12 +7,17 @@
   <link rel="icon" href="/favicon.ico" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
 
-  <!-- Scripts Monetag -->
-  <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9177371" async></script> <!-- OnClick -->
-  <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9177372" async></script> <!-- In-Page Push -->
-  <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9177373" async></script> <!-- Native Interstitial -->
-  <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9177374" async></script> <!-- Vignette Banner -->
-  <script type="text/javascript" src="https://go.pushnative.net/adbypass.js" data-idzone="9177375" async></script> <!-- Push Notification -->
+  <!-- Monetag Popunder -->
+  <script type="text/javascript">
+    var popunder = {
+      idzone: "9177371", // seu zone ID
+      frequency_period: 5,
+      close_after: 30,
+      onleave: false,
+      onlyNewTab: false
+    };
+  </script>
+  <script type="text/javascript" src="https://a.magsrv.com/popunder.js"></script>
 
   <style>
     body {
@@ -36,12 +41,12 @@
     <h1 class="text-4xl font-bold mb-4">Converta vídeos do YouTube em MP3 ou MP4</h1>
     <p class="text-lg mb-6">Grátis, rápido e compatível com todos os dispositivos</p>
     <input id="urlInput" type="text" placeholder="Cole o link do vídeo aqui..." oninput="mostrarQualidade()" class="w-full p-3 rounded-md text-black mb-4" />
-    <button onclick="redirecionar()" class="bg-blue-600 hover:bg-blue-700 transition px-6 py-3 rounded-xl text-white font-semibold text-lg shadow-lg">
+    <button onclick="mostrarAnuncio(); redirecionar()" class="bg-blue-600 hover:bg-blue-700 transition px-6 py-3 rounded-xl text-white font-semibold text-lg shadow-lg">
       Comece Agora
     </button>
   </section>
 
-  <!-- Qualidade (visível após colar o link) -->
+  <!-- Qualidade -->
   <section id="qualitySection" class="mt-8 w-full max-w-3xl">
     <h2 class="text-2xl font-semibold mb-4 text-center">Escolha a Qualidade</h2>
     <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -53,11 +58,6 @@
       <div class="bg-zinc-800 p-4 rounded-xl text-center">MP4 1080p</div>
     </div>
   </section>
-
-  <!-- Anúncios -->
-  <div class="ad-container" id="monetag-interstitial"></div>
-  <div class="ad-container" id="monetag-banner"></div>
-  <div class="ad-container" id="monetag-push"></div>
 
   <!-- Segurança -->
   <section class="mt-12 text-center max-w-xl">
@@ -118,6 +118,27 @@
       const qualitySection = document.getElementById('qualitySection');
       qualitySection.style.display = valor ? 'block' : 'none';
     }
+
+    function mostrarAnuncio() {
+      if (typeof window.clickPopunder === 'function') {
+        window.clickPopunder();
+      }
+    }
   </script>
+
+  <!-- Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(reg => console.log('Service Worker registrado:', reg.scope))
+          .catch(err => console.error('Erro ao registrar o Service Worker:', err));
+      });
+    }
+  </script>
+
+  <!-- Script adicional solicitado -->
+  <script src="https://fpyf8.com/88/tag.min.js" data-zone="140776" async data-cfasync="false"></script>
+
 </body>
 </html>
