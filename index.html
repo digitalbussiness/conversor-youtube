@@ -10,14 +10,19 @@
   <!-- Monetag Popunder -->
   <script type="text/javascript">
     var popunder = {
-      idzone: "9177371", // seu zone ID
+      idzone: "9177371", // Popunder
       frequency_period: 5,
       close_after: 30,
       onleave: false,
       onlyNewTab: false
     };
   </script>
-  <script type="text/javascript" src="https://a.magsrv.com/popunder.js"></script>
+  <script type="text/javascript" src="https://a.magsrv.com/popunder.js" async></script>
+
+  <!-- Outros formatos Monetag -->
+  <script src="https://fpyf8.com/88/tag.min.js" data-zone="140776" async data-cfasync="false"></script> <!-- In-Page Push -->
+  <script src="https://fpyf8.com/88/tag.min.js" data-zone="140777" async data-cfasync="false"></script> <!-- Native Interstitial -->
+  <script src="https://fpyf8.com/88/tag.min.js" data-zone="140778" async data-cfasync="false"></script> <!-- Vignette Banner -->
 
   <style>
     body {
@@ -41,7 +46,7 @@
     <h1 class="text-4xl font-bold mb-4">Converta vídeos do YouTube em MP3 ou MP4</h1>
     <p class="text-lg mb-6">Grátis, rápido e compatível com todos os dispositivos</p>
     <input id="urlInput" type="text" placeholder="Cole o link do vídeo aqui..." oninput="mostrarQualidade()" class="w-full p-3 rounded-md text-black mb-4" />
-    <button onclick="mostrarAnuncio(); redirecionar()" class="bg-blue-600 hover:bg-blue-700 transition px-6 py-3 rounded-xl text-white font-semibold text-lg shadow-lg">
+    <button onclick="redirecionar()" class="bg-blue-600 hover:bg-blue-700 transition px-6 py-3 rounded-xl text-white font-semibold text-lg shadow-lg">
       Comece Agora
     </button>
   </section>
@@ -118,12 +123,6 @@
       const qualitySection = document.getElementById('qualitySection');
       qualitySection.style.display = valor ? 'block' : 'none';
     }
-
-    function mostrarAnuncio() {
-      if (typeof window.clickPopunder === 'function') {
-        window.clickPopunder();
-      }
-    }
   </script>
 
   <!-- Service Worker -->
@@ -136,9 +135,5 @@
       });
     }
   </script>
-
-  <!-- Script adicional solicitado -->
-  <script src="https://fpyf8.com/88/tag.min.js" data-zone="140776" async data-cfasync="false"></script>
-
 </body>
 </html>
