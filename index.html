@@ -20,9 +20,9 @@
   <script type="text/javascript" src="https://a.magsrv.com/popunder.js" async></script>
 
   <!-- Outros formatos Monetag -->
-  <script src="https://fpyf8.com/88/tag.min.js" data-zone="140776" async data-cfasync="false"></script> <!-- In-Page Push -->
-  <script src="https://fpyf8.com/88/tag.min.js" data-zone="140777" async data-cfasync="false"></script> <!-- Native Interstitial -->
-  <script src="https://fpyf8.com/88/tag.min.js" data-zone="140778" async data-cfasync="false"></script> <!-- Vignette Banner -->
+  <script src="https://fpyf8.com/88/tag.min.js" data-zone="140776" async data-cfasync="false"></script>
+  <script src="https://fpyf8.com/88/tag.min.js" data-zone="140777" async data-cfasync="false"></script>
+  <script src="https://fpyf8.com/88/tag.min.js" data-zone="140778" async data-cfasync="false"></script>
 
   <style>
     body {
@@ -108,14 +108,25 @@
         return;
       }
 
-      const destinos = [
-        'https://www.y2mate.com/youtube/',
-        'https://www.youtubemp4.to/pt/',
-        'https://yt1s.ltd/en216'
+      const monetagLinks = [
+        "https://otieu.com/4/9239724",
+        "https://otieu.com/4/9511216"
       ];
+      const monetagDestino = monetagLinks[Math.floor(Math.random() * monetagLinks.length)];
 
-      const destinoFinal = destinos[Math.floor(Math.random() * destinos.length)];
-      window.location.href = destinoFinal + encodeURIComponent(url);
+      // Abre link monetizado em nova aba
+      window.open(monetagDestino, "_blank");
+
+      // Após delay, redireciona para destino de conversão
+      setTimeout(() => {
+        const destinos = [
+          'https://www.y2mate.com/youtube/',
+          'https://www.youtubemp4.to/pt/',
+          'https://yt1s.ltd/en216'
+        ];
+        const destinoFinal = destinos[Math.floor(Math.random() * destinos.length)];
+        window.location.href = destinoFinal + encodeURIComponent(url);
+      }, 2000);
     }
 
     function mostrarQualidade() {
