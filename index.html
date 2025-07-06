@@ -7,22 +7,20 @@
   <link rel="icon" href="/favicon.ico" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
 
-  <!-- Monetag Popunder -->
+  <!-- ✅ Monetag: Popunder (sem async para respeitar config) -->
   <script type="text/javascript">
     var popunder = {
-      idzone: "9177371", // Popunder
+      idzone: "9177371", // Altere esse ID se necessário
       frequency_period: 5,
       close_after: 30,
       onleave: false,
       onlyNewTab: false
     };
   </script>
-  <script type="text/javascript" src="https://a.magsrv.com/popunder.js" async></script>
+  <script type="text/javascript" src="https://a.magsrv.com/popunder.js"></script>
 
-  <!-- Outros formatos Monetag -->
-  <script src="https://fpyf8.com/88/tag.min.js" data-zone="140776" async data-cfasync="false"></script>
-  <script src="https://fpyf8.com/88/tag.min.js" data-zone="140777" async data-cfasync="false"></script>
-  <script src="https://fpyf8.com/88/tag.min.js" data-zone="140778" async data-cfasync="false"></script>
+  <!-- ✅ Monetag: Banner Interstitial (apenas 1 zona ativa para evitar conflitos) -->
+  <script src="https://fpyf8.com/88/tag.min.js" data-zone="140776" defer data-cfasync="false"></script>
 
   <style>
     body {
