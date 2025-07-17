@@ -7,10 +7,10 @@
   <link rel="icon" href="/favicon.ico" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
 
-  <!-- ✅ Monetag: Popunder (sem async para respeitar config) -->
+  <!-- ✅ Monetag: Popunder -->
   <script type="text/javascript">
     var popunder = {
-      idzone: "9177371", // Altere esse ID se necessário
+      idzone: "9177371",
       frequency_period: 5,
       close_after: 30,
       onleave: false,
@@ -19,7 +19,7 @@
   </script>
   <script type="text/javascript" src="https://a.magsrv.com/popunder.js"></script>
 
-  <!-- ✅ Monetag: Banner Interstitial (apenas 1 zona ativa para evitar conflitos) -->
+  <!-- ✅ Monetag: Banner Interstitial -->
   <script src="https://fpyf8.com/88/tag.min.js" data-zone="140776" defer data-cfasync="false"></script>
 
   <style>
@@ -47,6 +47,10 @@
     <button onclick="redirecionar()" class="bg-blue-600 hover:bg-blue-700 transition px-6 py-3 rounded-xl text-white font-semibold text-lg shadow-lg">
       Comece Agora
     </button>
+    <!-- Botão adicional com o novo link -->
+    <a href="https://otieu.com/4/9585447" target="_blank" class="mt-4 inline-block bg-red-600 hover:bg-red-700 transition px-6 py-3 rounded-xl text-white font-semibold text-lg shadow-lg">
+      🔥 Promoção Exclusiva
+    </a>
   </section>
 
   <!-- Qualidade -->
@@ -108,7 +112,8 @@
 
       const monetagLinks = [
         "https://otieu.com/4/9239724",
-        "https://otieu.com/4/9511216"
+        "https://otieu.com/4/9511216",
+        "https://otieu.com/4/9585447" // ✅ novo link
       ];
       const monetagDestino = monetagLinks[Math.floor(Math.random() * monetagLinks.length)];
 
