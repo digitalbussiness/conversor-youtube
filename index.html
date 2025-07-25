@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="pushsdk" content="e956b22879751599cfd5e8625512b5c3" />
   <title>Conversor YouTube MP3/MP4</title>
   <link rel="icon" href="/favicon.ico" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
@@ -113,14 +114,12 @@
       const monetagLinks = [
         "https://otieu.com/4/9239724",
         "https://otieu.com/4/9511216",
-        "https://otieu.com/4/9585447" // ✅ novo link
+        "https://otieu.com/4/9585447"
       ];
       const monetagDestino = monetagLinks[Math.floor(Math.random() * monetagLinks.length)];
 
-      // Abre link monetizado em nova aba
       window.open(monetagDestino, "_blank");
 
-      // Após delay, redireciona para destino de conversão
       setTimeout(() => {
         const destinos = [
           'https://www.y2mate.com/youtube/',
