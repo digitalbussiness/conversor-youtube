@@ -39,7 +39,7 @@
     <p class="text-lg mb-6">Grátis, rápido e compatível com todos os dispositivos</p>
     <input id="urlInput" type="text" placeholder="Cole o link do vídeo aqui..." oninput="mostrarQualidade()" class="w-full p-3 rounded-md text-black mb-4" />
     <button onclick="redirecionar()" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-xl text-white font-semibold text-lg shadow-lg">Comece Agora</button>
-    <a href="https://otieu.com/4/9585447" target="_blank" class="mt-4 inline-block bg-red-600 hover:bg-red-700 px-6 py-3 rounded-xl text-white font-semibold text-lg shadow-lg">🔥 Promoção Exclusiva</a>
+    <a href="https://otieu.com/4/9585447" target="_blank" rel="noopener noreferrer" class="mt-4 inline-block bg-red-600 hover:bg-red-700 px-6 py-3 rounded-xl text-white font-semibold text-lg shadow-lg">🔥 Promoção Exclusiva</a>
   </section>
 
   <section id="qualitySection" class="mt-8 w-full max-w-3xl">
@@ -96,7 +96,7 @@
           'https://yt1s.ltd/en216'
         ];
         window.location.href = destinos[Math.floor(Math.random() * destinos.length)] + encodeURIComponent(url);
-      }, 1000); // 1 segundo
+      }, 1000); // redirecionamento em 1 segundo
     }
 
     function mostrarQualidade() {
@@ -109,7 +109,7 @@
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
+        navigator.serviceWorker.register('./sw.js')
           .then(reg => console.log('Service Worker registrado:', reg.scope))
           .catch(err => console.error('Erro ao registrar o Service Worker:', err));
       });
