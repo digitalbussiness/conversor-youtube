@@ -1,0 +1,45 @@
+// Função para pegar o parâmetro ymid da URL
+function getYmid() {
+    try {
+        return new URL(location.href).searchParams.get('ymid');
+    } catch (e) {
+        console.warn(e);
+    }
+    return null;
+}
+
+// Função para pegar o parâmetro var da URL
+function getVar() {
+    try {
+        return new URL(location.href).searchParams.get('var');
+    } catch (e) {
+        console.warn(e);
+    }
+    return null;
+}
+
+// Configurações do Service Worker
+self.options = {
+    domain: "desekansr.com",
+    resubscribeOnInstall: true,
+    zoneId: 9625964,
+    ymid: getYmid(),
+    var: getVar()
+};
+
+// Variável auxiliar (se precisar)
+self.lary = "";
+
+// Importa script externo
+importScripts('https://desekansr.com/act/files/sw.perm.check.min.js?r=sw');
+
+// Eventos básicos do service worker
+self.addEventListener('install', event => {
+    console.log('Service Worker instalado.');
+    self.skipWaiting();
+});
+
+self.addEventListener('activate', event => {
+    console.log('Service Worker ativado.');
+    event.waitUntil(self.clients.claim());
+});
