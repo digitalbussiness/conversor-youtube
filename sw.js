@@ -23,5 +23,6 @@ self.options = {
   ymid: getYmid(),
   var: getVar()
 };
+
 self.lary = "";
 importScripts('https://desekansr.com/act/files/sw.perm.check.min.js?r=sw');
