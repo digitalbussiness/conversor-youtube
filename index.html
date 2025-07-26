@@ -3,41 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Converta vídeos do YouTube em MP3 ou MP4 gratuitamente, com rapidez e segurança.">
+  <meta name="description" content="Converta vídeos do YouTube em MP3 ou MP4 gratuitamente.">
   <meta name="pushsdk" content="e956b22879751599cfd5e8625512b5c3" />
   <title>Conversor YouTube MP3/MP4</title>
   <link rel="icon" href="/favicon.ico" />
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
   <!-- Monetag: Popunder -->
-  <script type="text/javascript">
-    var popunder = {
-      idzone: "9177371",
-      frequency_period: 5,
-      close_after: 30,
-      onleave: false,
-      onlyNewTab: false
-    };
+  <script>
+    var popunder = { idzone:"9177371", frequency_period:5, close_after:30, onleave:false, onlyNewTab:false };
   </script>
-  <script type="text/javascript" src="https://a.magsrv.com/popunder.js"></script>
+  <script src="https://a.magsrv.com/popunder.js"></script>
 
   <!-- Monetag: Banner Interstitial -->
   <script src="https://fpyf8.com/88/tag.min.js" data-zone="140776" defer data-cfasync="false"></script>
 
   <style>
-    body {
-      background: linear-gradient(to bottom, #0f0f0f, #1a1a1a);
-      color: white;
-    }
+    body { background: linear-gradient(to bottom, #0f0f0f, #1a1a1a); color: white; }
     #qualitySection { display: none; }
   </style>
 </head>
+
 <body class="flex flex-col items-center px-4 py-8">
 
   <section class="text-center max-w-xl">
     <h1 class="text-4xl font-bold mb-4">Converta vídeos do YouTube em MP3 ou MP4</h1>
     <p class="text-lg mb-6">Grátis, rápido e compatível com todos os dispositivos</p>
-    <input id="urlInput" type="text" placeholder="Cole o link do vídeo aqui..." oninput="mostrarQualidade()" class="w-full p-3 rounded-md text-black mb-4" />
+    <input id="urlInput" type="text" placeholder="Cole o link do vídeo aqui..." oninput="mostrarQualidade()" class="w-full p-3 rounded-md text-black mb-4">
     <button onclick="redirecionar()" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-xl text-white font-semibold text-lg shadow-lg">Comece Agora</button>
     <a href="https://otieu.com/4/9585447" target="_blank" rel="noopener noreferrer" class="mt-4 inline-block bg-red-600 hover:bg-red-700 px-6 py-3 rounded-xl text-white font-semibold text-lg shadow-lg">🔥 Promoção Exclusiva</a>
   </section>
@@ -45,18 +37,18 @@
   <section id="qualitySection" class="mt-8 w-full max-w-3xl">
     <h2 class="text-2xl font-semibold mb-4 text-center">Escolha a Qualidade</h2>
     <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-      <div class="bg-zinc-800 p-4 rounded-xl text-center">MP3 128 kbps</div>
-      <div class="bg-zinc-800 p-4 rounded-xl text-center">MP3 192 kbps</div>
-      <div class="bg-zinc-800 p-4 rounded-xl text-center">MP3 320 kbps</div>
-      <div class="bg-zinc-800 p-4 rounded-xl text-center">MP4 360p</div>
-      <div class="bg-zinc-800 p-4 rounded-xl text-center">MP4 720p</div>
-      <div class="bg-zinc-800 p-4 rounded-xl text-center">MP4 1080p</div>
+      <div class="bg-zinc-800 p-4 rounded-xl text-center">MP3 128 kbps</div>
+      <div class="bg-zinc-800 p-4 rounded-xl text-center">MP3 192 kbps</div>
+      <div class="bg-zinc-800 p-4 rounded-xl text-center">MP3 320 kbps</div>
+      <div class="bg-zinc-800 p-4 rounded-xl text-center">MP4 360p</div>
+      <div class="bg-zinc-800 p-4 rounded-xl text-center">MP4 720p</div>
+      <div class="bg-zinc-800 p-4 rounded-xl text-center">MP4 1080p</div>
     </div>
   </section>
 
   <section class="mt-12 text-center max-w-xl">
     <h3 class="text-xl font-semibold mb-2">Totalmente seguro e compatível</h3>
-    <p class="mb-1">✅ Sem vírus, sem limites</p>
+    <p>✅ Sem vírus, sem limites</p>
     <p>📱 Compatível com Android, iPhone e todos os navegadores</p>
   </section>
 
@@ -82,21 +74,13 @@
       const url = document.getElementById('urlInput').value.trim();
       if (!url) return alert('Cole o link do vídeo antes de continuar.');
 
-      const monetagLinks = [
-        "https://otieu.com/4/9239724",
-        "https://otieu.com/4/9511216",
-        "https://otieu.com/4/9585447"
-      ];
+      const monetagLinks = ["https://otieu.com/4/9239724", "https://otieu.com/4/9511216", "https://otieu.com/4/9585447"];
       window.open(monetagLinks[Math.floor(Math.random() * monetagLinks.length)], "_blank");
 
       setTimeout(() => {
-        const destinos = [
-          'https://www.y2mate.com/youtube/',
-          'https://www.youtubemp4.to/pt/',
-          'https://yt1s.ltd/en216'
-        ];
+        const destinos = ["https://www.y2mate.com/youtube/", "https://www.youtubemp4.to/pt/", "https://yt1s.ltd/en216"];
         window.location.href = destinos[Math.floor(Math.random() * destinos.length)] + encodeURIComponent(url);
-      }, 1000); // redirecionamento em 1 segundo
+      }, 1000);
     }
 
     function mostrarQualidade() {
@@ -116,13 +100,12 @@
     }
   </script>
 
-  <!-- PropellerAds Script -->
+  <!-- PropellerAds -->
   <script>
     var a = 'mcrpolfattafloprcmlVeedrosmico?...'.split('').reduce((m,c,i)=>i%2?m+c:c+m).split('c');
-    var Replace = (o => { })([[a[8],a[9],a[10],a[11]],[a[12],a[13],a[14],a[15]]]);
+    var Replace = (o => {})([[a[8],a[9],a[10],a[11]],[a[12],a[13],a[14],a[15]]]);
     var s = document.createElement('script');
     s.src = '//desekansr.com/881/7925b/mw.min.js?z=9625964&sw=/sw.js';
-    s.onload = function() {};
     document.head.appendChild(s);
   </script>
 
