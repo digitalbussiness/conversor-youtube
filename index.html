@@ -48,7 +48,6 @@
     <button onclick="redirecionar()" class="bg-blue-600 hover:bg-blue-700 transition px-6 py-3 rounded-xl text-white font-semibold text-lg shadow-lg">
       Comece Agora
     </button>
-    <!-- Botão adicional com o novo link -->
     <a href="https://otieu.com/4/9585447" target="_blank" class="mt-4 inline-block bg-red-600 hover:bg-red-700 transition px-6 py-3 rounded-xl text-white font-semibold text-lg shadow-lg">
       🔥 Promoção Exclusiva
     </a>
@@ -142,7 +141,7 @@
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
+        navigator.serviceWorker.register('/conversor‑youtube/sw.js')
           .then(reg => console.log('Service Worker registrado:', reg.scope))
           .catch(err => console.error('Erro ao registrar o Service Worker:', err));
       });
