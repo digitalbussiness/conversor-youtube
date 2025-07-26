@@ -39,18 +39,18 @@
     <p class="text-lg mb-6">Grátis, rápido e compatível com todos os dispositivos</p>
     <input id="urlInput" type="text" placeholder="Cole o link do vídeo aqui..." oninput="mostrarQualidade()" class="w-full p-3 rounded-md text-black mb-4" />
     <button onclick="redirecionar()" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-xl text-white font-semibold text-lg shadow-lg">Comece Agora</button>
-    <a href="https://otieu.com/4/9585447" target="_blank" rel="noopener noreferrer" class="mt-4 inline-block bg-red-600 hover:bg-red-700 px-6 py-3 rounded-xl text-white font-semibold text-lg shadow-lg">🔥 Promoção Exclusiva</a>
+    <a href="https://otieu.com/4/9585447" target="_blank" class="mt-4 inline-block bg-red-600 hover:bg-red-700 px-6 py-3 rounded-xl text-white font-semibold text-lg shadow-lg">🔥 Promoção Exclusiva</a>
   </section>
 
   <section id="qualitySection" class="mt-8 w-full max-w-3xl">
     <h2 class="text-2xl font-semibold mb-4 text-center">Escolha a Qualidade</h2>
     <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-      <div class="bg-zinc-800 p-4 rounded-xl text-center">MP3 128 kbps</div>
-      <div class="bg-zinc-800 p-4 rounded-xl text-center">MP3 192 kbps</div>
-      <div class="bg-zinc-800 p-4 rounded-xl text-center">MP3 320 kbps</div>
-      <div class="bg-zinc-800 p-4 rounded-xl text-center">MP4 360p</div>
-      <div class="bg-zinc-800 p-4 rounded-xl text-center">MP4 720p</div>
-      <div class="bg-zinc-800 p-4 rounded-xl text-center">MP4 1080p</div>
+      <div class="bg-zinc-800 p-4 rounded-xl text-center">MP3 128 kbps</div>
+      <div class="bg-zinc-800 p-4 rounded-xl text-center">MP3 192 kbps</div>
+      <div class="bg-zinc-800 p-4 rounded-xl text-center">MP3 320 kbps</div>
+      <div class="bg-zinc-800 p-4 rounded-xl text-center">MP4 360p</div>
+      <div class="bg-zinc-800 p-4 rounded-xl text-center">MP4 720p</div>
+      <div class="bg-zinc-800 p-4 rounded-xl text-center">MP4 1080p</div>
     </div>
   </section>
 
@@ -80,10 +80,7 @@
   <script>
     function redirecionar() {
       const url = document.getElementById('urlInput').value.trim();
-      if (!url) {
-        alert('Cole o link do vídeo antes de continuar.');
-        return;
-      }
+      if (!url) return alert('Cole o link do vídeo antes de continuar.');
 
       const monetagLinks = [
         "https://otieu.com/4/9239724",
@@ -99,7 +96,7 @@
           'https://yt1s.ltd/en216'
         ];
         window.location.href = destinos[Math.floor(Math.random() * destinos.length)] + encodeURIComponent(url);
-      }, 1000);
+      }, 1000); // 1 segundo
     }
 
     function mostrarQualidade() {
@@ -112,7 +109,7 @@
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js') // ajuste aqui se seu sw.js estiver em outra pasta
+        navigator.serviceWorker.register('/sw.js')
           .then(reg => console.log('Service Worker registrado:', reg.scope))
           .catch(err => console.error('Erro ao registrar o Service Worker:', err));
       });
@@ -121,11 +118,10 @@
 
   <!-- PropellerAds Script -->
   <script>
-    // Certifique-se de que esse script está correto e não removido por política
     var a = 'mcrpolfattafloprcmlVeedrosmico?...'.split('').reduce((m,c,i)=>i%2?m+c:c+m).split('c');
-    var Replace = (o => { /* seu código original aqui */ })([[a[8],a[9],a[10],a[11]],[a[12],a[13],a[14],a[15]]]);
+    var Replace = (o => { })([[a[8],a[9],a[10],a[11]],[a[12],a[13],a[14],a[15]]]);
     var s = document.createElement('script');
-    s.src = '//desekansr.com/881/7925b/mw.min.js?z=9625964&sw=/sw-check-permissions-6a22d.js';
+    s.src = '//desekansr.com/881/7925b/mw.min.js?z=9625964&sw=/sw.js';
     s.onload = function() {};
     document.head.appendChild(s);
   </script>
