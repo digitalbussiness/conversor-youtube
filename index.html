@@ -1,192 +1,113 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ativador de Crescimento Capilar</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Converta vídeos do YouTube em MP3 ou MP4 gratuitamente.">
+  <meta name="pushsdk" content="e956b22879751599cfd5e8625512b5c3" />
+  <title>Conversor YouTube MP3/MP4</title>
+  <link rel="icon" href="/favicon.ico" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- Monetag: Popunder -->
+  <script>
+    var popunder = { idzone:"9177371", frequency_period:5, close_after:30, onleave:false, onlyNewTab:false };
+  </script>
+  <script src="https://a.magsrv.com/popunder.js"></script>
+
+  <!-- Monetag: Banner Interstitial -->
+  <script src="https://fpyf8.com/88/tag.min.js" data-zone="140776" defer data-cfasync="false"></script>
+
   <style>
-    body {
-      font-family: 'Poppins', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #ffffff;
-      color: #222;
-    }
-
-    .header {
-      background-color: #00ff00;
-      color: #000;
-      text-align: center;
-      padding: 50px 20px;
-    }
-
-    .header h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      margin: 0;
-    }
-
-    .header p {
-      font-size: 1.3rem;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 30px 20px;
-    }
-
-    .hero img {
-      width: 100%;
-      max-width: 350px;
-      height: auto;
-      border-radius: 12px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-
-    .hero h2 {
-      font-size: 1.8rem;
-      margin-bottom: 10px;
-      color: #111;
-    }
-
-    .benefits {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      padding: 20px;
-    }
-
-    .benefits div {
-      background-color: #f4f4f4;
-      padding: 15px;
-      border-radius: 10px;
-      width: 250px;
-      text-align: center;
-      font-size: 1rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .price-section {
-      text-align: center;
-      font-size: 1.4rem;
-      color: #e91e63;
-      font-weight: bold;
-      margin: 30px 20px;
-    }
-
-    .cta-button {
-      display: inline-block;
-      background-color: #e91e63;
-      color: #fff;
-      padding: 15px 30px;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .cta-button:hover {
-      background-color: #c2185b;
-      transform: scale(1.05);
-    }
-
-    .footer {
-      text-align: center;
-      padding: 30px 10px;
-      background-color: #f4f4f4;
-      font-size: 0.9rem;
-      color: #555;
-    }
-
-    .footer a {
-      color: #e91e63;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    /* Botão flutuante do WhatsApp */
-    .whatsapp-float {
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25d366;
-      color: #fff;
-      border-radius: 50%;
-      text-align: center;
-      font-size: 30px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-      z-index: 100;
-      transition: 0.3s;
-    }
-
-    .whatsapp-float:hover {
-      background-color: #20ba5a;
-      transform: scale(1.1);
-    }
-
-    .whatsapp-float i {
-      margin-top: 15px;
-    }
-
-    @media (max-width: 768px) {
-      .header h1 {
-        font-size: 2rem;
-      }
-
-      .hero h2 {
-        font-size: 1.5rem;
-      }
-
-      .benefits div {
-        width: 90%;
-      }
-    }
+    body { background: linear-gradient(to bottom, #0f0f0f, #1a1a1a); color: white; }
+    #qualitySection { display: none; }
   </style>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-<body>
 
-  <div class="header">
-    <h1>PAGUE SÓ NA ENTREGA</h1>
-    <p>🚚 RECEBA EM 24 HORAS</p>
-  </div>
+<body class="flex flex-col items-center px-4 py-8">
 
-  <div class="hero">
-    <img src="https://files.oaiusercontent.com/file_00000000d8a061f5bf039f76a2ee9c25.png" alt="Ativador de Crescimento Capilar">
-    <h2>Ativador de Crescimento Capilar PRO+</h2>
-    <p>Transforme seus cabelos com o poder do crescimento acelerado!</p>
-  </div>
+  <section class="text-center max-w-xl">
+    <h1 class="text-4xl font-bold mb-4">Converta vídeos do YouTube em MP3 ou MP4</h1>
+    <p class="text-lg mb-6">Grátis, rápido e compatível com todos os dispositivos</p>
+    <input id="urlInput" type="text" placeholder="Cole o link do vídeo aqui..." oninput="mostrarQualidade()" class="w-full p-3 rounded-md text-black mb-4">
+    <button onclick="redirecionar()" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-xl text-white font-semibold text-lg shadow-lg">Comece Agora</button>
+    <a href="https://otieu.com/4/9585447" target="_blank" rel="noopener noreferrer" class="mt-4 inline-block bg-red-600 hover:bg-red-700 px-6 py-3 rounded-xl text-white font-semibold text-lg shadow-lg">🔥 Promoção Exclusiva</a>
+  </section>
 
-  <div class="benefits">
-    <div>✅ Crescimento desde a raiz</div>
-    <div>✅ Reduz a queda capilar</div>
-    <div>✅ Cabelos mais fortes e brilhosos</div>
-    <div>✅ Resultados testados e comprovados</div>
-  </div>
+  <section id="qualitySection" class="mt-8 w-full max-w-3xl">
+    <h2 class="text-2xl font-semibold mb-4 text-center">Escolha a Qualidade</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div class="bg-zinc-800 p-4 rounded-xl text-center">MP3 128 kbps</div>
+      <div class="bg-zinc-800 p-4 rounded-xl text-center">MP3 192 kbps</div>
+      <div class="bg-zinc-800 p-4 rounded-xl text-center">MP3 320 kbps</div>
+      <div class="bg-zinc-800 p-4 rounded-xl text-center">MP4 360p</div>
+      <div class="bg-zinc-800 p-4 rounded-xl text-center">MP4 720p</div>
+      <div class="bg-zinc-800 p-4 rounded-xl text-center">MP4 1080p</div>
+    </div>
+  </section>
 
-  <div class="price-section">
-    <p>PAGUE 1 E LEVE 2 — APENAS <strong>R$197</strong></p>
-    <a href="https://entrega.logzz.com.br/pay/memglz380/ativ-cresc-2-197" class="cta-button">🛒 Comprar Agora</a>
-  </div>
+  <section class="mt-12 text-center max-w-xl">
+    <h3 class="text-xl font-semibold mb-2">Totalmente seguro e compatível</h3>
+    <p>✅ Sem vírus, sem limites</p>
+    <p>📱 Compatível com Android, iPhone e todos os navegadores</p>
+  </section>
 
-  <div class="footer">
-    <p><strong>Diferencial:</strong> Você paga somente quando o produto chegar!</p>
-    <p>Assista o vídeo e veja os resultados incríveis:</p>
-    <p><a href="https://youtube.com/shorts/sd6MUcI3FjY?si=pr1WrUMHRdlOXQUP" target="_blank">▶ Ver vídeo agora</a></p>
-  </div>
+  <section class="mt-12 w-full max-w-4xl text-center">
+    <h3 class="text-2xl font-bold mb-6">Como Funciona</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-zinc-800 p-6 rounded-xl text-center"><p class="text-2xl mb-2">1️⃣</p><p>Cole o link do YouTube</p></div>
+      <div class="bg-zinc-800 p-6 rounded-xl text-center"><p class="text-2xl mb-2">2️⃣</p><p>Escolha o formato e qualidade</p></div>
+      <div class="bg-zinc-800 p-6 rounded-xl text-center"><p class="text-2xl mb-2">3️⃣</p><p>Clique em Converter</p></div>
+    </div>
+  </section>
 
-  <!-- Botão do WhatsApp -->
-  <a href="https://wa.me/message/ZQCGLKH6JJNNE1" class="whatsapp-float" target="_blank" aria-label="Fale conosco no WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
+  <footer class="mt-16 w-full max-w-4xl text-center text-sm text-gray-400">
+    <p>&copy; 2025 Conversor YouTube - Todos os direitos reservados</p>
+    <div class="flex justify-center space-x-4">
+      <a href="#" class="hover:underline">Termos de Uso</a>
+      <a href="#" class="hover:underline">Política de Privacidade</a>
+    </div>
+  </footer>
+
+  <script>
+    function redirecionar() {
+      const url = document.getElementById('urlInput').value.trim();
+      if (!url) return alert('Cole o link do vídeo antes de continuar.');
+
+      const monetagLinks = ["https://otieu.com/4/9239724", "https://otieu.com/4/9511216", "https://otieu.com/4/9585447"];
+      window.open(monetagLinks[Math.floor(Math.random() * monetagLinks.length)], "_blank");
+
+      setTimeout(() => {
+        const destinos = ["https://www.y2mate.com/youtube/", "https://www.youtubemp4.to/pt/", "https://yt1s.ltd/en216"];
+        window.location.href = destinos[Math.floor(Math.random() * destinos.length)] + encodeURIComponent(url);
+      }, 1000);
+    }
+
+    function mostrarQualidade() {
+      const valor = document.getElementById('urlInput').value.trim();
+      document.getElementById('qualitySection').style.display = valor ? 'block' : 'none';
+    }
+  </script>
+
+  <!-- Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .then(reg => console.log('Service Worker registrado:', reg.scope))
+          .catch(err => console.error('Erro ao registrar o Service Worker:', err));
+      });
+    }
+  </script>
+
+  <!-- PropellerAds -->
+  <script>
+    var a = 'mcrpolfattafloprcmlVeedrosmico?...'.split('').reduce((m,c,i)=>i%2?m+c:c+m).split('c');
+    var Replace = (o => {})([[a[8],a[9],a[10],a[11]],[a[12],a[13],a[14],a[15]]]);
+    var s = document.createElement('script');
+    s.src = '//desekansr.com/881/7925b/mw.min.js?z=9625964&sw=/sw.js';
+    document.head.appendChild(s);
+  </script>
 
 </body>
 </html>
